@@ -5,11 +5,16 @@ import {
     ExpandOutlined
 
 } from '@ant-design/icons';
+import { Select } from 'antd';
+
+const { Option } = Select;
+
 export default class Home extends Component {
     constructor() {
         super();
         this.state = {
-            users: []
+            users: [],
+            temp: []
         }
     }
     componentDidMount() {
@@ -17,17 +22,48 @@ export default class Home extends Component {
             .then(res => {
                 console.log(res.data)
                 this.setState({
-                    users: res.data.data
+                    users: res.data.data,
+                    temp: res.data.data
                 })
             })
             .catch(err => {
                 console.log(err)
             })
     }
+    onChange = (value) => {
+        this.props.history.push(`/profile/${value}`)
+
+    }
+
+
+
+
     render() {
         return (
             <div>
                 <h1 className="main-head" >Indywise</h1>
+                <div className="search-box">
+
+                    <Select
+                        showSearch
+                        style={{ width: 300 }}
+                        placeholder="Select a User"
+                        optionFilterProp="children"
+                        onChange={this.onChange}
+
+                        filterOption={(input, option) =>
+                            option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
+                        }
+                    >
+                        {
+                            this.state.users.map(user => (
+                                <Option value={user.id}>{`${user.first_name} ${user.last_name}`}</Option>
+
+                            ))
+                        }
+
+                    </Select>
+                </div>
                 <div className="main-div">
                     {
                         this.state.users.map((user, index) => (

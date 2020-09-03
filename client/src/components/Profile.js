@@ -26,7 +26,7 @@ export default class Profile extends Component {
             .then((res) => {
                 console.log(res.data)
                 this.setState({ profile: res.data.data });
-                axios.post('http://localhost:5000/booking/get-booking', {
+                axios.post('/booking/get-booking', {
                     id: this.props.match.params.id
                 })
                     .then(res => {
@@ -59,7 +59,7 @@ export default class Profile extends Component {
             loading: true
         })
         if (this.state.date !== "" && this.state.time !== "") {
-            axios.post('http://localhost:5000/booking/add-booking', {
+            axios.post('/booking/add-booking', {
                 id: this.state.profile.id,
                 time: this.state.time,
                 date: this.state.date
@@ -96,7 +96,7 @@ export default class Profile extends Component {
         this.setState({
             loading: true
         })
-        axios.post('http://localhost:5000/booking/remove-booking', {
+        axios.post('/booking/remove-booking', {
             id: this.state.profile.id,
         })
             .then(res => {
