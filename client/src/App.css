@@ -1,16 +1,13 @@
 
 @import "~antd/dist/antd.css";
-html{
 
-  background:#F0F4F7 !important;
-
-}
 body{
   
   font-family: 'Quicksand', sans-serif;
 }
 .App {
   font-family: 'Quicksand', sans-serif;
+  background:#F0F4F7;
 }
 
 
@@ -27,18 +24,6 @@ body{
 
 /*  New Styles */
 
-.gen-btn{
-  background: #018FEE;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
-.gen-btn:hover{
-  background: #0099FF;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-}
 .main-head{
   text-align: center;
   font-size: 50px;
@@ -53,6 +38,7 @@ body{
   width:600px;
 margin:0 auto;
 padding-bottom:40px;
+padding-top: 10vh;
   
  
 }
@@ -74,83 +60,4 @@ padding-bottom:40px;
   border-radius: 20px;
   border: 1px solid #ecf0f1;
   box-shadow: 0 3px 5px rgba(0,0,0,.08);
-}
-.ant-avatar > img{
-  background: #fff;
-  margin-top: -4px;
-}
-.login-bg{
- 
-  width: 70vw;
-  margin: 0 auto;
-  margin-top: 10vh;
-}
-.login-btn{
-  background: #0099FF;
-  color: #fff;
-  height: 40px;
-  padding: 0px 16px;
-  width: 100%;
-  border: none;
-  border-radius: 12px;
-  padding: 0px 16px;
-  box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.06);
-  font-size: 15px;
-  font-weight: 500;
-}
-.login-btn:hover{
-  background: #2384c4;
-  color: #fff;
-  height: 40px;
-  padding: 0px 16px;
-  width: 100%;
-  border: none;
-  border-radius: 12px;
-  padding: 0px 16px;
-  box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.06);
-  font-size: 15px;
-  font-weight: 500;
-}
-.login-btn:focus{
-  background: #115b8b;
-  color: #fff;
-  height: 40px;
-  padding: 0px 16px;
-  width: 100%;
-  border: none;
-  border-radius: 12px;
-  padding: 0px 16px;
-  box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.06);
-  font-size: 15px;
-  font-weight: 500;
-}
-.already-text{
-  color:#666666;
-}
-.login-img{
-  height: 90px;
-  margin: 0 auto;
-}
-.uk-navbar-nav>li>a{
-  font-family: 'Quicksand', sans-serif;
-  font-weight: 600;
-  letter-spacing: 1px;
-  color: #2c3e50;
-
-}
-.ant-modal-header{
-  border-bottom: none;
-}
-.ant-modal-footer{
-  display: none;
-}
-.ant-input{
-  color: #333333;
- border-radius: 10px;
-background: #EBEBEB;
-  height: 50px;
-}
-.span-head{
-  font-weight: 600;
-    margin-right: 10px;
 }

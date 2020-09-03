@@ -16,7 +16,8 @@ export default class Profile extends Component {
             profile: {},
             date: "",
             time: "",
-            loading: false
+            loading: false,
+            booking: {}
         }
     }
     componentDidMount() {
@@ -30,6 +31,9 @@ export default class Profile extends Component {
                 })
                     .then(res => {
                         console.log('Booking', res.data)
+                        this.setState({
+                            booking: res.data.data[0]
+                        })
                     })
                     .catch(err => {
                         console.log(err);
@@ -66,6 +70,7 @@ export default class Profile extends Component {
                     })
                     if (res.data.success) {
                         message.success('Slot Booked !')
+                        this.componentDidMount();
                     } else {
                         message.error('Some Error Occured, Try Agaim')
                     }
@@ -85,14 +90,44 @@ export default class Profile extends Component {
             })
         }
     }
+
+    removeBooking = () => {
+
+        this.setState({
+            loading: true
+        })
+        axios.post('http://localhost:5000/booking/remove-booking', {
+            id: this.state.profile.id,
+        })
+            .then(res => {
+                this.setState({
+                    loading: false
+                })
+                if (res.data.success) {
+                    message.success('Booking Canceled !')
+                    this.componentDidMount();
+                } else {
+                    message.error('Some Error Occured, Try Agaim')
+                }
+
+            })
+            .catch(err => {
+                console.log(err);
+                this.setState({
+                    loading: false
+                })
+            })
+
+
+    }
     render() {
         return (
             <div>
                 <div className="main-div">
 
-                    <div className="uk-card uk-card-default uk-width-1-1@m uk-margin-top" style={{ padding: '20px', marginTop: '10vh', background: '#fff' }}>
+                    <div className="uk-card uk-card-default uk-width-1-1@m uk-margin-top" style={{ padding: '20px', background: '#fff' }}>
 
-                        <div className="uk-card-header" style={{ border: 'none' }}>
+                        <div className="uk-card-header" style={{ border: 'none', marginTop: '20px' }}>
                             <div className="uk-grid-small uk-flex-middle" uk-grid="true">
                                 <div className="uk-width-auto">
 
@@ -107,38 +142,56 @@ export default class Profile extends Component {
 
                             </div>
                         </div>
-                        <div style={{ padding: '20px' }}>
-                            <h2 className="card-head" >Book Slot</h2>
-                            <div>
-                                <h2 className="card-head-sm" >Select Date</h2>
-                                <DatePicker onChange={this.onChangeDate} />
-                            </div>
-                            <br />
+                        {
+                            (this.state.booking)
+                                ? <div>
+                                    <div className="uk-width-expand">
 
-                            <div>
-                                <h2 className="card-head-sm" >Select Time</h2>
-                                <TimePicker
-                                    onChange={this.onChangeTime}
-                                    defaultValue={moment('00:00', format)}
-                                    format={format}
-                                />,
-                            </div>
-                            <br />
-                            <Button
-                                loading={this.state.loading}
-                                type="primary"
-                                onClick={this.createBooking}
-                            >
-                                Book Slot
-                            </Button>
+                                        <h3 className="uk-card-title uk-margin-remove-bottom card-head">Booking Details</h3>
 
-                        </div>
+                                        <p className="uk-text-meta uk-margin-remove-top">Date : {this.state.booking.date}</p>
+                                        <p className="uk-text-meta uk-margin-remove-top">Time : {this.state.booking.time}</p>
+                                        <Button
+                                            loading={this.state.loading}
+                                            type="primary"
+                                            onClick={this.removeBooking}
+                                        >
+                                            Cancel Booking
+                                    </Button>
+                                    </div>
+                                </div>
+                                : <div style={{ padding: '20px' }}>
+                                    <h2 className="card-head" >Book Slot</h2>
+                                    <div>
+                                        <h2 className="card-head-sm" >Select Date</h2>
+                                        <DatePicker onChange={this.onChangeDate} />
+                                    </div>
+                                    <br />
+
+                                    <div>
+                                        <h2 className="card-head-sm" >Select Time</h2>
+                                        <TimePicker
+                                            onChange={this.onChangeTime}
+                                            defaultValue={moment('00:00', format)}
+                                            format={format}
+                                        />
+                                    </div>
+                                    <br />
+                                    <Button
+                                        loading={this.state.loading}
+                                        type="primary"
+                                        onClick={this.createBooking}
+                                    >
+                                        Book Slot
+                                    </Button>
+                                </div>
+
+                        }
+
 
 
                     </div>
-
                 </div>
-
 
             </div>
         )

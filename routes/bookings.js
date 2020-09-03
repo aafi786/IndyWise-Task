@@ -49,5 +49,25 @@ router.post('/get-booking', (req, res) => {
         }
     })
 })
+router.post('/remove-booking', (req, res) => {
+    console.log(req.body);
+    const { id } = req.body;
+    Booking.findOneAndDelete({ id }, (err, data) => {
+        if (err) {
+            console.log(err);
+            res.status(200).send({
+                success: false,
+                msg: "error occured",
+
+            })
+        } else {
+            res.status(200).send({
+                success: true,
+                msg: "deleted",
+
+            })
+        }
+    })
+})
 
 module.exports = router;
