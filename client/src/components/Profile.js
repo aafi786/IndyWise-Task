@@ -127,7 +127,7 @@ export default class Profile extends Component {
 
                     <div className="uk-card uk-card-default uk-width-1-1@m uk-margin-top" style={{ padding: '20px', background: '#fff' }}>
 
-                        <div className="uk-card-header" style={{ border: 'none', marginTop: '20px' }}>
+                        <div className="uk-card-header" style={{ border: 'none' }}>
                             <div className="uk-grid-small uk-flex-middle" uk-grid="true">
                                 <div className="uk-width-auto">
 
