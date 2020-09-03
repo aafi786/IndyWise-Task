@@ -149,8 +149,8 @@ export default class Profile extends Component {
 
                                         <h3 className="uk-card-title uk-margin-remove-bottom card-head">Booking Details</h3>
 
-                                        <p className="uk-text-meta uk-margin-remove-top">Date : {this.state.booking.date}</p>
-                                        <p className="uk-text-meta uk-margin-remove-top">Time : {this.state.booking.time}</p>
+                                        <p className="uk-text-meta uk-margin-remove-top" >Date : <span id="date" > {this.state.booking.date}</span></p>
+                                        <p className="uk-text-meta uk-margin-remove-top" >Time : <span id="time" > {this.state.booking.time} </span> </p>
                                         <Button
                                             loading={this.state.loading}
                                             type="primary"

@@ -1,0 +1,203 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing Home Component Home Component SnapShot 1`] = `
+<div>
+  <h1
+    className="main-head"
+  >
+    Indywise
+  </h1>
+  <div
+    className="search-box"
+  >
+    <div
+      className="ant-select ant-select-single ant-select-show-arrow ant-select-show-search"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      style={
+        Object {
+          "width": 300,
+        }
+      }
+    >
+      <div
+        className="ant-select-selector"
+        onMouseDown={[Function]}
+      >
+        <span
+          className="ant-select-selection-search"
+        >
+          <input
+            aria-activedescendant="undefined_list_0"
+            aria-autocomplete="list"
+            aria-controls="undefined_list"
+            aria-haspopup="listbox"
+            aria-owns="undefined_list"
+            autoComplete="off"
+            className="ant-select-selection-search-input"
+            onChange={[Function]}
+            onCompositionEnd={[Function]}
+            onCompositionStart={[Function]}
+            onKeyDown={[Function]}
+            onMouseDown={[Function]}
+            onPaste={[Function]}
+            readOnly={true}
+            role="combobox"
+            style={
+              Object {
+                "opacity": 0,
+              }
+            }
+            unselectable="on"
+            value=""
+          />
+        </span>
+        <span
+          className="ant-select-selection-placeholder"
+        >
+          Select a User
+        </span>
+      </div>
+      <span
+        aria-hidden={true}
+        className="ant-select-arrow"
+        onMouseDown={[Function]}
+        style={
+          Object {
+            "WebkitUserSelect": "none",
+            "userSelect": "none",
+          }
+        }
+        unselectable="on"
+      >
+        <span
+          aria-label="down"
+          className="anticon anticon-down ant-select-suffix"
+          role="img"
+        >
+          <svg
+            aria-hidden="true"
+            className=""
+            data-icon="down"
+            fill="currentColor"
+            focusable="false"
+            height="1em"
+            viewBox="64 64 896 896"
+            width="1em"
+          >
+            <path
+              d="M884 256h-75c-5.1 0-9.9 2.5-12.9 6.6L512 654.2 227.9 262.6c-3-4.1-7.8-6.6-12.9-6.6h-75c-6.5 0-10.3 7.4-6.5 12.7l352.6 486.1c12.8 17.6 39 17.6 51.7 0l352.6-486.1c3.9-5.3.1-12.7-6.4-12.7z"
+            />
+          </svg>
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    className="main-div"
+  />
+</div>
+`;
+
+exports[`Testing Profile Component Render Page Title 1`] = `
+<div>
+  <div
+    className="main-div"
+  >
+    <div
+      className="uk-card uk-card-default uk-width-1-1@m uk-margin-top"
+      style={
+        Object {
+          "background": "#fff",
+          "padding": "20px",
+        }
+      }
+    >
+      <div
+        className="uk-card-header"
+        style={
+          Object {
+            "border": "none",
+          }
+        }
+      >
+        <div
+          className="uk-grid-small uk-flex-middle"
+          uk-grid="true"
+        >
+          <div
+            className="uk-width-auto"
+          >
+            <img
+              alt="avatar"
+              style={
+                Object {
+                  "borderRadius": "100px",
+                  "height": "120px",
+                }
+              }
+            />
+          </div>
+          <div
+            className="uk-width-expand"
+          >
+            <h3
+              className="uk-card-title uk-margin-remove-bottom card-head"
+            >
+              undefined undefined
+            </h3>
+            <p
+              className="uk-text-meta uk-margin-remove-top"
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="uk-width-expand"
+        >
+          <h3
+            className="uk-card-title uk-margin-remove-bottom card-head"
+          >
+            Booking Details
+          </h3>
+          <p
+            className="uk-text-meta uk-margin-remove-top"
+          >
+            Date : 
+            <span
+              id="date"
+            >
+               
+            </span>
+          </p>
+          <p
+            className="uk-text-meta uk-margin-remove-top"
+          >
+            Time : 
+            <span
+              id="time"
+            >
+               
+               
+            </span>
+             
+          </p>
+          <button
+            className="ant-btn ant-btn-primary"
+            onClick={[Function]}
+            type="button"
+          >
+            <span>
+              Cancel Booking
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
