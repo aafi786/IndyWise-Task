@@ -1,0 +1,15 @@
+/node_modules
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+
+# dependencies
+/client/node_modules
+/clientv/.pnp
+/client.pnp.js
+
+# testing
+/client/coverage
+
+#package lock
+package-lock.json
+/client/package-lock.json
