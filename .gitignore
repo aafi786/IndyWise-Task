@@ -13,3 +13,5 @@
 #package lock
 package-lock.json
 /client/package-lock.json
+
+.serverless

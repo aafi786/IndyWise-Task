@@ -42,7 +42,12 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-    console.log(`Server Started On Port ${PORT}`);
-})
+//FOR HEROKU 
+
+// const PORT = process.env.PORT || 5000;
+// app.listen(PORT, () => {
+//     console.log(`Server Started On Port ${PORT}`);
+// })
+
+//FOR AWS LAMBDA
+module.exports = app;
